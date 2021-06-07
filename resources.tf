@@ -11,9 +11,6 @@ resource "azurerm_log_analytics_workspace" "workspace" {
 
   tags = var.tags
 }
-output "la_id" {
-  value = azurerm_log_analytics_workspace.workspace.id
-}
 
 resource "azurerm_log_analytics_solution" "la_solution" {
   for_each = var.solution_plan_map
